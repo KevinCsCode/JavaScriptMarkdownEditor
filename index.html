@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Simple Markdown Previewer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Silkscreen|Raleway">
+    <script type="text/javascript" src="./app.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.2.12/marked.min.js" integrity="sha512-uwSxMaa/W7dmSIXEd07BMVymisMRRUS/Pr5a76AquekKKu9HWn4rBiCd+ZtwqnoijAJvttdrz8krzP26kZjg0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div id="header-container">
+        <i class="fa-brands fa-free-code-camp"></i>
+        <h1>Markdown Magic</h1>
+    </div>
+    <div id="main-container">
+        <div id="input">
+            <textarea id="editor" placeholder='# On a journey towards markdown magic go we
+## Which is to say that we are going to use the JavaScript marked library to avail of some nifty markup.
+**Bold text may be rendered by enclosing a string in double - asterisks.**
+*If italics are your bag, then just enclose the relevant portion of text between single asterisks.*
+* Anyone who wishes to render bullet points just needs to open the line with a single asterisk or a single dash - the result will be the same whichever route you take.
+And if you commence the line with a dash, the result looks something like...
+To indent a line, just place the right - arrow character in front, e.g.> This line has been indented by a fixed margin.
+>> This line has been double - indented.
+You want to render a code - block -
+`Well my friend, it is your lucky day because that can be done too: just enclose the line with backticks.`
+Nifty, huh?
+Now suppose you want to put in a horizontal line, to emphasise the end of a section. How easy is that to do? All the easy: just type in three consecutive dashes, and press the carriage return
+---
+Et voila!
+Now, you might also be wondering how to reference the source of this bounty which you have worked to your advantage.Well the site is[here](https://marked.js.org/) and while we were at it, we managed to show you how this markdown tool can be used to create hyperlinks: the display text is shown first, in square brackets, followed by the url in round brackets
+But more than mere external links can be used with this tool - we have the possibility to display external images as well. To do that, we write an exclamation point, the display text in square brackets and we follow that with the url in round brackets, so you can get users seeing the world just the way you do... 
+![JavaScript Everywhere meme](https://media.makeameme.org/created/javascript-javascript.jpg)
+Oh, last thing to be aware of - a pair of consecutive spaces will result in
+  a line-break.') 
+                  oninput="parseTextUsingMarked('editor','preview')"></textarea>
+            <!--<textarea id="editor" placeholder="Enter text here"></textarea>-->
+        </div>
+        <div id="preview">
+            <script>parseTextUsingMarked('editor', 'preview')</script>
+        </div>
+    </div>
+    <div id="buttons-container">
+        <button type="button" onclick="clearInputAndOutputAreas()">Clear editor</button>
+        <button type="button" onclick="copyMarkedUpText('preview')">Copy output</button>
+    </div>
+</body>
+</html>

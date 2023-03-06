@@ -1,0 +1,121 @@
+* {
+    --header-background-color: rgb(128 128 128);
+    --header-text-color: rgb(211 214 204);
+    --main-font-rule: 'Raleway',serif;
+    --button-background-color: rgb(156 11 11);
+}
+body {
+    width: 99%;
+    font-family:var(--main-font-rule);
+    margin:0 5px;
+    background-color:var(--header-background-color);
+}
+
+#header-container {
+    display: grid;
+    grid-template-columns:1fr 7fr;
+    width: 80%;
+    height:contain;
+    margin: 5px auto 5px auto;
+    background-color: var(--header-background-color);
+    color: var(--header-text-color);
+    vertical-align:middle;
+}
+#preview,#input {
+    border:1px groove darkgrey;
+    background-color:var(--header-text-color);
+}
+#header-container i {
+    font-size: 34px;
+    vertical-align:middle;
+    margin:auto;
+}
+#header-container h1 {
+    vertical-align:middle;
+    padding-left:3px;
+}
+
+@media only screen and (max-width:650px) {
+    #main-container {
+        width:inherit;
+        display: block;
+    }
+    #input {
+        width: 95%;
+        height:400px;
+        margin: 5px auto 20px auto;
+    }
+    #editor {
+        width:100%;
+        height:100%;
+        margin:auto;
+    }
+    #preview {
+        width:95%;
+        height:400px;
+        overflow:scroll;
+        margin: auto;
+    }
+    #buttons-container {
+        display: block;
+        width: 50%;
+        margin: 5px auto 5px auto;
+    }
+
+        #buttons-container button {
+            font-size: 19px;
+            padding: 3px 0;
+            margin-bottom:3px;
+        }
+}
+
+@media only screen and (min-width:650px) {
+    #main-container {
+        width: inherit;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2px;
+        row-gap:0px;
+    }
+    #input {
+        width: 95%;
+        height:80vh;
+        margin:auto;
+        overflow:hidden;
+    }
+    #editor {
+        width: 98%;
+        height: 100%;
+        padding: 5px;
+        overflow:scroll;
+    }
+    #preview {
+        width: 95%;
+        height: 78vh;
+        margin: auto;
+        padding: 5px;
+        overflow: scroll;
+    }
+    #buttons-container {
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        width:70%;
+        margin: 7px auto 2px auto;
+        column-gap:15px;
+    }
+        #buttons-container button {
+            font-size: 22px;
+            padding: 3px 0;
+            margin: auto;
+        }
+}
+
+#buttons-container button {
+    width: 80%;
+    font-family: var(--main-font-rule);
+    background-color: var(--button-background-color);
+    color: var(--header-text-color);
+    border: none;
+    border-radius: 8px;
+    cursor:pointer;
+}
