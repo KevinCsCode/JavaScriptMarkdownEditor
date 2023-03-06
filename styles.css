@@ -1,5 +1,6 @@
 * {
-    --header-background-color: rgb(128 128 128);
+    --main-background-color: rgb(128 128 128);
+    --header-background: linear-gradient(-30deg, var(--main-background-color),rgb(160 170 165),var(--main-background-color),rgb(160 170 165));
     --header-text-color: rgb(211 214 204);
     --main-font-rule: 'Raleway',serif;
     --button-background-color: rgb(156 11 11);
@@ -7,17 +8,19 @@
 body {
     width: 99%;
     font-family:var(--main-font-rule);
-    margin:0 5px;
-    background-color:var(--header-background-color);
+    margin:0;
+    background-color:var(--main-background-color);
+    overflow-x:hidden;
 }
 
 #header-container {
     display: grid;
     grid-template-columns:1fr 7fr;
-    width: 80%;
+    width: 100%;
+    padding: 0 20%;
     height:contain;
-    margin: 5px auto 5px auto;
-    background-color: var(--header-background-color);
+    margin: 0 auto 5px auto;
+    background: var(--header-background);
     color: var(--header-text-color);
     vertical-align:middle;
 }
@@ -39,6 +42,7 @@ body {
     #main-container {
         width:inherit;
         display: block;
+        padding:0 5px;
     }
     #input {
         width: 95%;
@@ -46,9 +50,10 @@ body {
         margin: 5px auto 20px auto;
     }
     #editor {
-        width:100%;
-        height:100%;
-        margin:auto;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        padding: 5px;
     }
     #preview {
         width:95%;
@@ -61,12 +66,11 @@ body {
         width: 50%;
         margin: 5px auto 5px auto;
     }
-
-        #buttons-container button {
-            font-size: 19px;
-            padding: 3px 0;
-            margin-bottom:3px;
-        }
+    #buttons-container button {
+        font-size: 19px;
+        padding: 3px 0;
+        margin-bottom:3px;
+    }
 }
 
 @media only screen and (min-width:650px) {
@@ -75,7 +79,8 @@ body {
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: 2px;
-        row-gap:0px;
+        row-gap: 0px;
+        padding: 0 5px;
     }
     #input {
         width: 95%;
